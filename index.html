@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangla Font UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">আমার ওয়েবসাইট</h1>
+            <p class="subtitle">বাংলা ফন্ট এবং হোয়াটসঅ্যাপ বোতাম সহ</p>
+        </header>
+        <main>
+            <button class="whatsapp-button" onclick="openWhatsApp()">
+                WhatsApp এ বার্তা পাঠান
+            </button>
+        </main>
+    </div>
+
+    <script>
+        function openWhatsApp() {
+            window.open('https://wa.me/1234567890', '_blank'); // Replace 1234567890 with your phone number
+        }
+    </script>
+</body>
+</html>
