@@ -55,10 +55,18 @@
         .contact a:hover {
             text-decoration: underline;
         }
-        .more-info-button {
+        .info-block {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-radius: 8px;
+            color: #856404;
+            font-size: 17px;
+        }
+        .toggle-button {
             display: block;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 12px;
             font-size: 18px;
             background-color: #007bff;
@@ -68,15 +76,16 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .more-info-button:hover {
+        .toggle-button:hover {
             background-color: #0056b3;
         }
-        .more-info-content {
+        .hidden-content {
             display: none;
-            margin-top: 20px;
+            margin-top: 15px;
             padding: 15px;
             background: #f1f1f1;
             border-radius: 8px;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -92,21 +101,36 @@
                 দ্রুত যোগাযোগ করুন!
             </p>
         </header>
+
         <div class="contact">
             💬 WhatsApp: <a href="tel:+8801328673342">+8801328673342</a><br>
             📞 ফোন: <a href="https://wa.me/8809638963814" target="_blank">+8809638963814</a>
         </div>
 
-        <button class="more-info-button" onclick="toggleMoreInfo()">More Info</button>
-        <div class="more-info-content" id="moreInfo">
-            <!-- এখানে তুমি পরবর্তীতে তথ্য যোগ করতে পারো -->
+        <div class="info-block">
+            আপনার ফোন আনলক করার জন্য আমাদের উপরের নাম্বারে যোগাযোগ করে একটি কোড নিতে হবে।<br>
+            সেই কোড দিয়ে আপনার ফোনটি আনলক করতে হবে।
+        </div>
+
+        <button class="toggle-button" onclick="toggleMoreInfo()">More Info</button>
+        <div class="hidden-content" id="moreInfo">
             <p>এই জায়গায় বিস্তারিত তথ্য যুক্ত করা হবে...</p>
+        </div>
+
+        <button class="toggle-button" onclick="toggleUnlockGuide()">কিভাবে Unlock করতে হবে</button>
+        <div class="hidden-content" id="unlockGuide">
+            <p>এই অংশে আনলক করার ধাপগুলো লেখা হবে...</p>
         </div>
     </div>
 
     <script>
         function toggleMoreInfo() {
             const content = document.getElementById('moreInfo');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function toggleUnlockGuide() {
+            const content = document.getElementById('unlockGuide');
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
