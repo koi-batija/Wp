@@ -55,6 +55,29 @@
         .contact a:hover {
             text-decoration: underline;
         }
+        .more-info-button {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .more-info-button:hover {
+            background-color: #0056b3;
+        }
+        .more-info-content {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +96,19 @@
             💬 WhatsApp: <a href="tel:+8801328673342">+8801328673342</a><br>
             📞 ফোন: <a href="https://wa.me/8809638963814" target="_blank">+8809638963814</a>
         </div>
+
+        <button class="more-info-button" onclick="toggleMoreInfo()">More Info</button>
+        <div class="more-info-content" id="moreInfo">
+            <!-- এখানে তুমি পরবর্তীতে তথ্য যোগ করতে পারো -->
+            <p>এই জায়গায় বিস্তারিত তথ্য যুক্ত করা হবে...</p>
+        </div>
     </div>
+
+    <script>
+        function toggleMoreInfo() {
+            const content = document.getElementById('moreInfo');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
