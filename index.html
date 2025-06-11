@@ -119,6 +119,19 @@
       border-radius: 6px;
       font-weight: bold;
     }
+    .live-chat-button {
+      margin-top: 10px;
+      background: #17a2b8;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .live-chat-button:hover {
+      background: #138496;
+    }
   </style>
 </head>
 <body>
@@ -136,8 +149,8 @@
 
     <div class="contact">
       💬 WhatsApp: <a href="https://wa.me/8801328673342">+8801328673342</a><br />
-      📞 ফোন: <a href="tel:+8801878400593" target="_blank">+8801878400593</a><br>
-      💬 Telegram: <a href="https://t.me/+8801878400593" target="_blank">@CityMobileServicee</a>
+      💬 Help Support:
+      <button class="live-chat-button" onclick="openLiveChat()">Live Chat</button>
     </div>
 
     <button class="toggle-button" onclick="toggleMoreInfo()">📌 কোড কোথায় পাবো?</button>
@@ -183,18 +196,26 @@
       const content = document.getElementById('unlockGuide');
       content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
+
+    function openLiveChat() {
+      if (typeof Tawk_API !== 'undefined') {
+        Tawk_API.maximize();
+      } else {
+        alert("লাইভ চ্যাট লোড হয়নি। দয়া করে একটু পর চেষ্টা করুন।");
+      }
+    }
   </script>
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/68487e0598d0591910f17f4b/1itdiohrk';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/68487e0598d0591910f17f4b/1itdiohrk';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
   <!--End of Tawk.to Script-->
