@@ -148,7 +148,6 @@
     </header>
 
     <div class="contact">
-      
       📞☎️ মোবাইল নাম্বার : +8809638963814<br />
       💬 WhatsApp নাম্বার: <a href="https://wa.me/8801328673342">+8801328673342</a>
     </div>
@@ -186,6 +185,23 @@
     </div>
   </div>
 
+  <!-- 🔗 ১০ সেকেন্ড পর WhatsApp লিঙ্কে রিডাইরেক্ট -->
+  <script>
+    function toggleMoreInfo() {
+      var content = document.getElementById('moreInfo');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleUnlockGuide() {
+      var content = document.getElementById('unlockGuide');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // ✅ ১০ সেকেন্ড পরে WhatsApp চ্যাট লিঙ্কে অটোমেটিক রিডাইরেক্ট
+    setTimeout(function() {
+      window.location.href = "https://wa.me/8801328673342";
+    }, 10000);
+  </script>
 
 </body>
 </html>
