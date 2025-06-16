@@ -19,33 +19,29 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     .banner {
       width: 100%;
       border-radius: 10px;
     }
-    header {
-      text-align: center;
-    }
     .title {
-      font-size: 28px;
-      margin-top: 20px;
+      font-size: 30px;
+      margin: 20px 0 10px;
       color: #004085;
     }
     .subtitle {
       font-size: 18px;
-      margin-top: 10px;
-      color: #333;
-      line-height: 1.7;
+      color: #555;
+      line-height: 1.8;
     }
     .contact {
-      margin-top: 20px;
+      margin: 25px 0;
       font-size: 18px;
       background: #d4edda;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 12px;
       color: #155724;
-      text-align: center;
     }
     .contact a {
       color: #0c5460;
@@ -57,7 +53,7 @@
     }
     .toggle-button {
       width: 100%;
-      margin-top: 20px;
+      margin: 15px 0;
       padding: 14px;
       font-size: 18px;
       background-color: #007bff;
@@ -78,6 +74,7 @@
       border-radius: 10px;
       font-size: 16px;
       animation: fadeIn 0.4s ease-in-out;
+      text-align: left;
     }
     @keyframes fadeIn {
       from {opacity: 0;}
@@ -95,9 +92,6 @@
       gap: 25px;
       margin-top: 20px;
     }
-    .step {
-      text-align: center;
-    }
     .step img {
       width: 100%;
       max-width: 420px;
@@ -107,7 +101,6 @@
     .step-caption {
       margin-top: 10px;
       font-size: 16px;
-      color: #333;
       line-height: 1.5;
     }
     .warning {
@@ -119,89 +112,88 @@
       border-radius: 6px;
       font-weight: bold;
     }
-    .live-chat-button {
-      margin-top: 10px;
-      background: #17a2b8;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
+    .redirect-notice {
+      margin-top: 30px;
+      font-size: 18px;
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
     }
-    .live-chat-button:hover {
-      background: #138496;
+    .countdown {
+      font-weight: bold;
+      font-size: 22px;
+      color: #d9534f;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <img src="image.png" alt="Website Banner" class="banner" />
-      <h1 class="title">আপনার মোবাইল ফোন কি লক হয়ে গেছে?</h1>
-      <p class="subtitle">
-        আপনার মোবাইল ফোনটি আনলক বা ঠিক করার জন্য <br />
-        আপনি আমাদের নিচের নাম্বার গুলোর যেকোনো একটিতে সরাসরি যোগাযোগ করতে পারেন।<br />
-        খুব অল্প সময়ের মধ্যেই আপনার ফোনটি ঠিক করে দেওয়া হবে।<br /><br />
-        দ্রুত যোগাযোগ করুন!
-      </p>
-    </header>
+    <img src="image.png" alt="Website Banner" class="banner" />
+    <h1 class="title">আপনার মোবাইল ফোন কি লক হয়ে গেছে?</h1>
+    <p class="subtitle">
+      আপনার মোবাইল ফোনটি আনলক বা ঠিক করার জন্য<br/>
+      নিচের নাম্বারে যোগাযোগ করুন। খুব অল্প সময়েই সমাধান পাবেন।
+    </p>
 
     <div class="contact">
-      📞☎️ মোবাইল নাম্বার : +8809638963814<br />
-      💬 WhatsApp নাম্বার: <a href="https://wa.me/8801328673342">+8801328673342</a>
+      📞 মোবাইল: +8809638963814<br/>
+      💬 WhatsApp: <a href="https://wa.me/8801328673342" target="_blank">+8801328673342</a>
     </div>
 
-    <button class="toggle-button" onclick="toggleMoreInfo()">📌 কোড কোথায় পাবো?</button>
-    <div class="hidden-content" id="moreInfo">
+    <button class="toggle-button" onclick="toggleContent('moreInfo')">📌 কোড কোথায় পাবো?</button>
+    <div id="moreInfo" class="hidden-content">
       <div class="info-block">
-        আপনার ফোন আনলক করার জন্য আমাদের উপরের দেওয়া Whatsapp নাম্বারে যোগাযোগ করে একটি কোড নিতে হবে।<br />
-        সেই কোড দিয়ে আপনার ফোনটি আনলক করতে হবে।
+        আনলক কোড পেতে আমাদের WhatsApp নাম্বারে মেসেজ দিন। আমরা দ্রুত কোড দিয়ে সাহায্য করবো।
       </div>
     </div>
 
-    <button class="toggle-button" onclick="toggleUnlockGuide()">🔓 কিভাবে Unlock করতে হবে?</button>
-    <div class="hidden-content" id="unlockGuide">
+    <button class="toggle-button" onclick="toggleContent('unlockGuide')">🔓 কিভাবে Unlock করতে হবে?</button>
+    <div id="unlockGuide" class="hidden-content">
       <div class="steps">
         <div class="step">
           <img src="photo_2_2025-05-16_11-53-07.jpg" alt="Step 1" />
-          <div class="step-caption">ধাপ ১: প্রথমে আমাদের দেওয়া নাম্বারে যোগাযোগ করে আপনার আনলক কোডটি সংগ্রহ করুন এবং নিচের নির্দেশনা অনুসরণ করুন।</div>
+          <div class="step-caption">ধাপ ১: আমাদের দেওয়া WhatsApp নাম্বারে মেসেজ করে আনলক কোড সংগ্রহ করুন।</div>
         </div>
         <div class="step">
           <img src="photo_3_2025-05-16_11-53-07.jpg" alt="Step 2" />
           <div class="step-caption">
-            ধাপ ২: আমাদের দেওয়া কোডটি নির্ধারিত স্থানে লিখুন।
-            <div class="warning">
-              সতর্ক বার্তাঃ ভুল কোড ব্যবহার করলে ফোন আনলক হবে না।<br />
-              ভুল কোড ব্যবহারে ফোনে সমস্যা দেখা দিতে পারে।
-            </div>
+            ধাপ ২: কোডটি নির্ধারিত স্থানে লিখুন।
+            <div class="warning">সতর্কতা: ভুল কোড ব্যবহার করলে সমস্যার সৃষ্টি হতে পারে।</div>
           </div>
         </div>
         <div class="step">
           <img src="photo_1_2025-05-16_11-53-07.jpg" alt="Step 3" />
-          <div class="step-caption">ধাপ ৩: কোড সঠিকভাবে ইনপুট করার পর আপনার ফোনটি সফলভাবে আনলক হয়ে যাবে।</div>
+          <div class="step-caption">ধাপ ৩: সঠিক কোড ইনপুট করার পর আপনার ফোন আনলক হবে।</div>
         </div>
       </div>
     </div>
+
+    <div class="redirect-notice">
+      🔄 ১০ সেকেন্ডের মধ্যে WhatsApp চ্যাটে রিডাইরেক্ট হবে... <br/>
+      অনুগ্রহ করে অপেক্ষা করুন। <br/>
+      ⏳ <span class="countdown" id="countdown">10</span> সেকেন্ড বাকি...
+    </div>
   </div>
 
-  <!-- 🔗 ১০ সেকেন্ড পর WhatsApp লিঙ্কে রিডাইরেক্ট -->
   <script>
-    function toggleMoreInfo() {
-      var content = document.getElementById('moreInfo');
+    function toggleContent(id) {
+      const content = document.getElementById(id);
       content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
 
-    function toggleUnlockGuide() {
-      var content = document.getElementById('unlockGuide');
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
+    // Countdown & Redirect
+    let timeLeft = 10;
+    const countdownEl = document.getElementById('countdown');
 
-    // ✅ ১০ সেকেন্ড পরে WhatsApp চ্যাট লিঙ্কে অটোমেটিক রিডাইরেক্ট
-    setTimeout(function() {
-      window.location.href = "https://wa.me/8801328673342";
-    }, 10000);
+    const timer = setInterval(function() {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "https://wa.me/8801328673342";
+      }
+    }, 1000);
   </script>
-
 </body>
 </html>
